@@ -5,8 +5,10 @@ _In 2017, your microwave plays music while you reheat french fries..._
 * [Summary](#summary)
 * [Requirements](#requirements)
 * [Installation](#installation)
-  * [Preparation](#preparation)
-  * [Download Repo](#download-repo-and-extract)
+  * [Prepare Micro SD](#prepare-micro-sd)
+  * [Install Arduino IDE](#install-arduino-ide)
+  * [Install SFEMP3Shield Library](#install-arduino-sfemp3shield-library)
+  * [Download Repo](#download-and-extract-repo)
   * [Open Sketch](#open-sketch-in-arduino-ide)
   * [Edit Sketch](#edit-sketch-and-add-song-names)
   * [Upload Sketch](#verify-and-upload-sketch)
@@ -28,19 +30,7 @@ the musical microwave project. Check it out on
   * [Speaker with AUX Input](http://a.co/00E7tHy)
   * [Male-to-Female Jumper Wires](https://www.sparkfun.com/products/12794)
   * [3-Pin SPDT Micro Switch](http://a.co/1Jljt22)
-  * [Micro SD](http://a.co/2HIo4hr)   
-     * [formatted to FAT32](https://gopro.com/help/articles/Solutions_Troubleshooting/SD-Card-Reformat-on-a-Windows-Computer)
-     * containing *.mp3 song files
-       * [up to 320 kbps bitrate](https://www.sparkfun.com/datasheets/Components/SMD/vs1053.pdf)
-       * [and 48 kHz sample rate](https://www.sparkfun.com/datasheets/Components/SMD/vs1053.pdf)
-       * [with 8.3 file names](https://www.computerhope.com/jargon/num/8-3-format.htm)  
-
-
-* Software  
-  * [Arduino IDE](https://www.arduino.cc/en/Main/Software) (1.0.0 or greater)
-  * [Sparkfun-MP3-Player-Shield-Arduino-Library](https://github.com/mpflaga/Sparkfun-MP3-Player-Shield-Arduino-Library)
-    * [SFEMP3Shield](https://github.com/mpflaga/Sparkfun-MP3-Player-Shield-Arduino-Library/tree/master/SFEMP3Shield)
-    * [SdFat](https://github.com/mpflaga/Sparkfun-MP3-Player-Shield-Arduino-Library/tree/master/SdFat)
+  * [Micro SD](http://a.co/2HIo4hr)
 
 
 * Tools
@@ -49,24 +39,76 @@ the musical microwave project. Check it out on
 
 ## Installation
 
-### Preparation
-1. Connect Arduino UNO to computer using a USB 2.0 Cable Type A/B.
+### Prepare Micro SD
+1. [Format your Micro SD card to FAT32](https://gopro.com/help/articles/Solutions_Troubleshooting/SD-Card-Reformat-on-a-Windows-Computer).
 
-### Download Repo and Extract
-1. Download this repository:  
+   ![format micro sd to fat32](images/micro-sd-fat-32.png)
+
+2. Add your .mp3 files to the Micro SD.
+   Each .mp3 file must:  
+   i. have an [8.3 filename](https://www.computerhope.com/jargon/num/8-3-format.htm) (8 characters + '.mp3' in our case),  
+   ii. have a bitrate of no more than [320 kbps](https://www.sparkfun.com/datasheets/Components/SMD/vs1053.pdf),   
+   iii. and have a sample rate of no more than [48 kHz](https://www.sparkfun.com/datasheets/Components/SMD/vs1053.pdf).  
+
+   ![add mp3 files to Micro SD](images/mp3-files-on-micro-sd.png)
+
+   Notice that I had to rename my .mp3 files in order to meet the 8.3 filename requirement.
+
+### Install Arduino IDE
+1. Download the latest Arduino IDE via https://www.arduino.cc/en/Main/Software.
+2. Install the Arduino IDE.  
+   i. Official installation instructions can be found [here](https://www.arduino.cc/en/Guide/HomePage).
+
+   If this is your first time using an Arduino, you should consider looking
+   at some of the [Built-In Examples](https://www.arduino.cc/en/Tutorial/BuiltInExamples).
+
+### Install Arduino SFEMP3Shield Library
+1. Download the Sparkfun-MP3-Player-Shield-Arduino-library  
+   i. Go to https://github.com/madsci1016/Sparkfun-MP3-Player-Shield-Arduino-Library.  
+   ii. Left-click `Clone or download`.  
+   iii. Left-click `Download ZIP`.
+2. Extract the downloaded .zip file.
+3. Navigate to the extracted `~\Sparkfun-MP3-Player-Shield-Arduino-Library-master\Sparkfun-MP3-Player-Shield-Arduino-Library-master` directory.  
+
+   !['~\Sparkfun-MP3-Player-Shield-Arduino-Library-master\Sparkfun-MP3-Player-Shield-Arduino-Library-master' directory](images/sfemp3shield-directory.png)
+4. Install the SdFat and SFEMP3SHIELD Arduino Libraries  
+
+ _Windows_  
+     i. Copy the `SdFat` and `SFEMP3SHIELD` folders into the `~\Documents\Arduino\library` directory.
+
+   _Mac_  
+     i. Right-click on the Arduino app.  
+     ii. Select `Show Package Contents`.  
+     iii. Navigate to `Contents` > `Resources` > `Java` > `libraries` (if the `libraries`   directory does not exist, create it).  
+     iv. Copy the `SdFat` and `SFEMP3SHIELD` folders into the `libaries` directory.
+5. Restart the Arduino IDE if it was open.
+6. In the Arduino IDE, go to `Sketch` > `Import Libary` and confirm that both libaries are listed.
+
+  ![check arduino libraries](images/install-arduino-libraries.png)  
+
+7. Add the patch files to the Micro SD.  
+   i. Return to the extracted `~\Sparkfun-MP3-Player-Shield-Arduino-Library-master\Sparkfun-MP3-Player-Shield-Arduino-Library-master` directory.  
+   ii. Open the `plugins` folder.  
+   iii. Copy all the files inside the `plugins` folder onto your Micro SD.  
+
+   ![add plugin files to micro sd](images/plugin-files-on-micro-sd.png)
+
+### Download and Extract Repo
+1. Download [this repository](https://github.com/The-Engineer-Channel/musical-microwave-arduino-mp3-shield):  
   i. Left-click `Clone or download`.  
   ii. Left-click `Download ZIP`.
-3. Unzip the downloaded file.
+2. Extract the downloaded .zip file.
 
 ### Open Sketch in Arduino IDE
-1. Navigate to the `~\musical-microwave-arduino-mp3-shield\sparkfun-mp3-shield-microwave-switch` directory.
-2. Open `sparkfun-mp3-shield-microwave-switch.ino` in the Arduino IDE.
-3. Make sure the appropriate Board and Port are selected:  
+1. Connect Arduino UNO to computer using a USB 2.0 Cable Type A/B.
+2. Navigate to the extracted `~\musical-microwave-arduino-mp3-shield\sparkfun-mp3-shield-microwave-switch` directory.
+3. Open `sparkfun-mp3-shield-microwave-switch.ino` in the Arduino IDE.
+4. Make sure the appropriate Board and Port are selected:  
   i. `Tools` > `Board` > `Arduino/Genuino Uno`  
   ii `Tools` > `Port` > `COM# (Arduino/Genuino Uno)`
 
 ### Edit Sketch and Add Song Names
-1. Replace this section of the code with the *.mp3 filenames on
+1. Replace this section of the code with the .mp3 filenames on
 your Micro SD.  
 
   ![edit code](images/arduino-ide-add-song-names.png)
@@ -97,9 +139,11 @@ I'll do my best to respond to issues and pull requests!
   * [Download the Arduino IDE](https://www.arduino.cc/en/Main/Software)
   * [Getting Started with Arduino and Genuino UNO](https://www.arduino.cc/en/Guide/ArduinoUno)
   * [Installing Additional Arduino Libraries](https://www.arduino.cc/en/Guide/Libraries)
+
+### SparkFun MP3 Player Shield
+* [MP3 Player Shield Hookup Guide V15](https://learn.sparkfun.com/tutorials/mp3-player-shield-hookup-guide-v15) _Great comprehensive tutorial_
 * [Arduino SFEMP3Shield Library](https://github.com/mpflaga/Sparkfun-MP3-Player-Shield-Arduino-Library)
   * [Documetation](http://mpflaga.github.io/Sparkfun-MP3-Player-Shield-Arduino-Library/)
-* [MP3 Player Shield Hookup Guide V15](https://learn.sparkfun.com/tutorials/mp3-player-shield-hookup-guide-v15)
 
 ### GitHub
 * [What is GitHub, and What Is It Used For?](https://www.howtogeek.com/180167/htg-explains-what-is-github-and-what-do-geeks-use-it-for/)
