@@ -73,16 +73,16 @@ the musical microwave project. Check it out on
    !['~\Sparkfun-MP3-Player-Shield-Arduino-Library-master\Sparkfun-MP3-Player-Shield-Arduino-Library-master' directory](images/sfemp3shield-directory.png)
 4. Install the SdFat and SFEMP3SHIELD Arduino Libraries  
 
- _Windows_  
+   _Windows_  
      i. Copy the `SdFat` and `SFEMP3SHIELD` folders into the `~\Documents\Arduino\library` directory.
 
    _Mac_  
      i. Right-click on the Arduino app.  
      ii. Select `Show Package Contents`.  
      iii. Navigate to `Contents` > `Resources` > `Java` > `libraries` (if the `libraries`   directory does not exist, create it).  
-     iv. Copy the `SdFat` and `SFEMP3SHIELD` folders into the `libaries` directory.
-5. Restart the Arduino IDE if it was open.
-6. In the Arduino IDE, go to `Sketch` > `Import Libary` and confirm that both libaries are listed.
+     iv. Copy the `SdFat` and `SFEMP3SHIELD` folders into the `libaries` directory.  
+5. Restart the Arduino IDE if it was open.  
+6. In the Arduino IDE, go to `Sketch` > `Import Libary` and confirm that both libaries are listed.  
 
   ![check arduino libraries](images/install-arduino-libraries.png)  
 
