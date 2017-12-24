@@ -24,13 +24,17 @@ the musical microwave project. Check it out on
 ## Requirements
 * Hardware
   * [Arduino UNO](https://store.arduino.cc/usa/arduino-uno-rev3)
+  * [AC Adapter](http://a.co/0Voa9rU)  
+    i. 2.1mm x 5.5mm male barrel jack plug  
+    ii. [Center Positive](https://en.wikipedia.org/wiki/Polarity_symbols)   
+    iii. 12V, 1-2A DC Output  
   * [SparkFun MP3 Player Shield](https://www.sparkfun.com/products/12660)
   * [Arduino Stackable Header Kit - R3](https://www.sparkfun.com/products/11417)
+  * [Micro SD](http://a.co/2HIo4hr)
   * [3.5mm Male-to-Male Stereo Audio AUX Cable](http://a.co/3FVRnBt)
   * [Speaker with AUX Input](http://a.co/00E7tHy)
   * [Male-to-Female Jumper Wires](https://www.sparkfun.com/products/12794)
   * [3-Pin SPDT Micro Switch](http://a.co/1Jljt22)
-  * [Micro SD](http://a.co/2HIo4hr)
 
 
 * Tools
