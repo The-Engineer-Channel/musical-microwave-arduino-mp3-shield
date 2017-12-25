@@ -50,7 +50,7 @@ the musical microwave project. Check it out on
 2. Add your .mp3 files to the Micro SD.
    Each .mp3 file must:  
    i. have an [8.3 filename](https://www.computerhope.com/jargon/num/8-3-format.htm) (8 characters + '.mp3' in our case),  
-   ii. have a bitrate of no more than [320 kbps](https://www.sparkfun.com/datasheets/Components/SMD/vs1053.pdf),   
+   ii. have a bit rate of no more than [320 kbps](https://www.sparkfun.com/datasheets/Components/SMD/vs1053.pdf),   
    iii. and have a sample rate of no more than [48 kHz](https://www.sparkfun.com/datasheets/Components/SMD/vs1053.pdf).  
 
    ![add mp3 files to Micro SD](images/mp3-files-on-micro-sd.png)
