@@ -18,8 +18,8 @@ _In 2017, your microwave plays music while you reheat french fries..._
 ## Summary
 This repository contains an Arduino sketch for
 the musical microwave project. Check it out on
-[YouTube](link to YouTube) and
-[Instructables](link to Instructables) for a demonstration and detailed instructions.
+[YouTube](https://youtu.be/oQVUsBi2Gl4) and
+[Instructables](https://www.instructables.com/id/Musical-Microwave-Arduino-Project) for a demonstration and detailed instructions.
 
 ## Requirements
 * Hardware
